@@ -8,10 +8,10 @@ const sharp = require('sharp');
 const app = express();
 
 // app.use(express.urlencoded({extended: true}));
-app.use(express.static(path.join(__dirname, '../frontend')));
+app.use(express.static(path.join(__dirname, '../Frontend')));
 
 app.get('/', (req, res) => {
-  res.sendFile(path.join(__dirname, '../frontend', 'index.html'));
+  res.sendFile(path.join(__dirname, '../Frontend', 'index.html'));
 });
 
 // Multer code for uploading image
