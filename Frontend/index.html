@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>Image Converter</h1>
+  
+  <form action="/uploads" method="post" enctype="multipart/form-data">
+    <button class="btn select-img-btn">
+      <label for="select-img">
+        Select Image
+      </label>
+    </button>
+    
+    <input id="select-img" type="file" name="input-img" accept="image/*" required >
+
+    <label for="desired-format">Select new format</label>
+    <select name="desired-format" id="desired-format">
+      <option value="jpg">JPG</option>
+      <option value="jpeg">JPEG</option>
+      <option value="png">PNG</option>
+    </select>
+
+    <button class="btn convert-img-btn" type="submit">Convert Image</button>
+  </form>
+
+  <script src="script.js"></script>
+</body>
+</html>
