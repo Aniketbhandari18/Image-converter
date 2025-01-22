@@ -14,6 +14,13 @@ app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname, '../Frontend', 'index.html'));
 });
 
+// create upload and output folder
+const uploadDir = path.join(__dirname, 'uploads');
+const outputDir = path.join(__dirname, 'output');
+
+if (!fs.existsSync(uploadDir)) fs.mkdirSync(uploadDir);
+if (!fs.existsSync(outputDir)) fs.mkdirSync(outputDir);
+
 // Multer code for uploading image
 const storage = multer.diskStorage({
   destination: (req, file, cb) =>{
