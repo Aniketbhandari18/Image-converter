@@ -33,7 +33,6 @@ const storage = multer.diskStorage({
 
 const upload = multer({storage: storage});
 app.post('/uploads', upload.single('input-img'), async (req, res) =>{
-
   // const originalFileName = req.file.originalname;
   const fileName = req.file.filename;
   const desiredFormat = req.body['desired-format'];
