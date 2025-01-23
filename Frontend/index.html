@@ -5,11 +5,23 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
   <link rel="stylesheet" href="style.css">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
   <h1>Image Converter</h1>
   
   <form action="/uploads" method="post" enctype="multipart/form-data">
+    <div class="img-preview">
+      <div class="img">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRmCy16nhIbV3pI1qLYHMJKwbH2458oiC9EmA&s">
+        <p>preview.jpg</p>
+      </div>
+      <button type="button" class="delete-preview">
+        <i class="fa fa-trash" aria-hidden="true"></i>
+      </button>
+    </div>
+
     <button class="btn select-img-btn">
       <label for="select-img">
         Select Image
