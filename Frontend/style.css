@@ -101,3 +101,38 @@ select {
 #select-img{
   display: none; 
 }
+
+
+
+@media (max-width: 490px){
+  form{
+    width: 90vw;
+  }
+  .img-preview .img img{
+    width: 80px;
+    margin-right: 15px;
+  }
+}
+@media (max-width: 400px){
+  h1{
+    font-size: 28px;
+  }
+  .btn{
+    font-size: 18px;
+  }
+  .img-preview .img img{
+    width: 70px;
+    margin-right: 15px;
+  }
+  .delete-preview i{
+    font-size: 20px;
+  }
+}
+@media (max-width: 330px){
+  body{
+    min-width: 330px
+  }
+  form{
+    min-width: 310px;
+  }
+}
