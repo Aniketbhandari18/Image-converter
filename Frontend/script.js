@@ -2,6 +2,7 @@ const form = document.querySelector('form');
 const selectImgSection = document.querySelector('.select-img-btn');
 const fileInput = document.querySelector('#select-img');
 const imgPreviewSection = document.querySelector('.img-preview');
+const desiredFormat = document.querySelector('#desired-format');
 
 // Image preview elements
 const imgPreview = document.querySelector('.img img');
@@ -37,18 +38,30 @@ deleteBtn.addEventListener('click', () =>{
 })
 
 
-form.addEventListener('submit', (event) =>{  
-  const formData = new FormData(form);
+form.addEventListener('submit', (event) =>{
+  const desiredExt = desiredFormat.value;
+  const fileName = fileInput.files[0].name;
+  const extName = fileName.split('.').pop();
+  console.log(extName);
+  console.log(desiredExt);
 
-  uploadFile(formData);
-
-  async function uploadFile(formData) {
-    await fetch('/uploads', {
-      method: 'POST',
-      body: formData
-    });
-
-    location.reload();
-    fileInput.value = '';
+  if (desiredExt === extName){
+    console.log('hi');
+    event.preventDefault();
+    alert(`Selected image file is already in ${desiredExt}`);
+    return;
   }
+  // const formData = new FormData(form);
+
+  // uploadFile(formData);
+
+  // async function uploadFile(formData) {
+  //   await fetch('/uploads', {
+  //     method: 'POST',
+  //     body: formData
+  //   });
+
+  //   location.reload();
+  //   fileInput.value = '';
+  // }
 })

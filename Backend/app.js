@@ -42,7 +42,7 @@ app.post('/uploads', upload.single('input-img'), async (req, res) =>{
 
     res.download(path.join(__dirname, 'output', convertedFileName), convertedFileName, (err) =>{
       if (err) throw err;
-
+      
       // fs.unlinkSync(path.join(__dirname, 'output', convertedFileName));
       // fs.unlinkSync(path.join(__dirname, 'uploads', fileName));
     });
