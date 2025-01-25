@@ -14,10 +14,8 @@ fileInput.addEventListener('change', (event) =>{
   if (event.target.value === '') return;
 
   const selectedImg = event.target.files[0];
-  console.log(selectedImg);
 
   const img = URL.createObjectURL(selectedImg);
-  console.log(img);
 
   imgPreview.src = img;
   imgPreviewName.innerText = selectedImg.name;
@@ -34,7 +32,6 @@ deleteBtn.addEventListener('click', () =>{
 
   imgPreviewSection.style.display = 'none';
   selectImgSection.style.display = 'block';
-  console.log(fileInput.value);
 })
 
 
@@ -42,8 +39,6 @@ form.addEventListener('submit', (event) =>{
   const desiredExt = desiredFormat.value;
   const fileName = fileInput.files[0].name;
   const extName = fileName.split('.').pop();
-  console.log(extName);
-  console.log(desiredExt);
 
   if (desiredExt === extName){
     console.log('hi');
@@ -61,7 +56,6 @@ form.addEventListener('submit', (event) =>{
   //     body: formData
   //   });
 
-  //   location.reload();
   //   fileInput.value = '';
   // }
 })
